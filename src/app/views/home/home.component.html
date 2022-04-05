@@ -1,0 +1,44 @@
+<app-header></app-header>
+<main>
+  <section class="container">
+    <div
+      *ngIf="listMovies.length"
+      [routerLink]="[ 'movie', listMovies[0].id ]"
+      class="banner"
+      [ngStyle]="{
+        'background-image': urlImg,
+        'background-position': 'center',
+        'background-size': 'cover'
+      }"
+    >
+      <div class="text-container">
+        <h1>{{ listMovies[0].title }}</h1>
+        <p>{{ listMovies[0].overview }}</p>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </section>
+  <section class="movie-list">
+    <h1>Filmes mais Populares</h1>
+    <div class="space-card">
+      <div *ngFor="let item of listMovies; let i = index">
+        <div *ngIf="i > 0">
+          <a [routerLink]="[ 'movie', item.id ]">
+            <mat-card class="card">
+              <img [src]="img(item.poster_path)" alt="movie" />
+            </mat-card>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <mat-paginator
+    [length]="total_pages"
+    [pageSize]="20"
+    [pageSizeOptions]="[20]"
+    aria-label="Select page"
+    (page)="mudarPagina($event)"
+  >
+  </mat-paginator>
+</main>
+<app-footer></app-footer>

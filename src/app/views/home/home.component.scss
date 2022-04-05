@@ -1,0 +1,74 @@
+@mixin container-flex($gap, $direction) {
+  display: flex;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+.container{
+  @include container-flex(0, column);
+}
+
+.divider{
+  height: 64px;
+  background-color: var(--quartenary-color);
+}
+
+.banner{
+  @include container-flex(15px, column);
+  height: 480px;
+  width: auto;
+
+}
+
+.text-container{
+  @include container-flex(25px, column);
+  height: 480px;
+  background-color: rgba(0, 0, 0, .4);
+  justify-content: end;
+  padding-bottom: 80px;
+
+  h1, p {
+    color: var(--branco);
+    margin-left: 91px;
+  }
+
+  h1 {
+    font-family: Racing Sans One;
+    font-size: 3.3rem;
+  }
+
+  p {
+    font-family: Rationale;
+    font-size: 1.5rem;
+    max-width: 60%;
+  }
+}
+
+
+.movie-list{
+  h1 {
+    margin: 25px 0 25px 91px;
+    font-family: Racing Sans One;
+    font-size: 2.5rem;
+    color: var(--secundary-color);
+  }
+}
+
+.space-card{
+  @include container-flex(5, row);
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .card{
+    margin: 5px;
+    img{
+      width: 198px;
+    }
+
+    &:hover{
+      box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, .2), -5px 0 2px 1px rgba(0, 0, 0, .2);
+    }
+  }
+
+
+}

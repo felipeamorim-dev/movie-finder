@@ -1,0 +1,21 @@
+@mixin flex-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+header {
+  background-color: var(--primary-color);
+  height: 72px;
+  .header{
+    @include flex-container;
+    height: 72px;
+    margin-left: 91px;
+
+    .text-logo{
+      height: 19px;
+    }
+  }
+}
+
+

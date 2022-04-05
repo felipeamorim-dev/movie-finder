@@ -1,0 +1,14 @@
+@import "./../../../config-scss/mixins.scss";
+
+.footer{
+  @include container-flex(0, row);
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secundary-color);
+  font-size: medium;
+  span{
+    mat-icon{
+      vertical-align: middle;
+    }
+  }
+}

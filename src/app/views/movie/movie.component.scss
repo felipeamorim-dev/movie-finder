@@ -1,0 +1,160 @@
+@import "./../../../config-scss/mixins.scss";
+
+.nav {
+  @include container-flex(5px, row);
+  align-items: center;
+  height: 36px;
+  background-color: var(--ternary-color);
+
+  a {
+    text-decoration: none;
+    margin-left: 91px;
+    color: var(--quartenary-color);
+    font-family: Rationale;
+    font-size: 1.3rem;
+  }
+}
+
+.background {
+  height: 600px;
+
+  .effects {
+    @include container-flex(5px, row);
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+
+    .card {
+      @include container-flex(5px, row);
+      width: 75%;
+      height: 75%;
+      background-color: rgba(0, 0, 0, 0.6);
+
+      img {
+        height: 480px;
+        width: 320px;
+        margin-top: -16px;
+        margin-left: -16px;
+      }
+
+      mat-card-content {
+        @include container-flex(5px, column);
+        margin-left: 30px;
+        color: white;
+
+        h1 {
+          margin-top: 10px;
+          font-family: Racing Sans One;
+          font-size: 2.7rem;
+        }
+
+        h2 {
+          font-family: Rationale;
+          font-size: 1.8rem;
+          padding-top: 15px;
+          margin-top: 10px;
+        }
+
+        .genre{
+          @include container-flex(25px, row);
+          align-items: center;
+        }
+
+        p {
+          font-family: Rationale;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+.divider {
+  height: 64px;
+  background-color: var(--quartenary-color);
+  @include container-flex(10px, row);
+  align-items: center;
+  justify-content: space-around;
+
+  .time,
+  .release,
+  .budget {
+    @include container-flex(10px, row);
+    align-items: center;
+    height: 64px;
+
+    h2 {
+      margin-bottom: -16px;
+      padding-bottom: 13px;
+      color: white;
+      font-family: Rationale;
+      font-size: 1.5rem;
+    }
+
+    mat-icon {
+      color: white;
+    }
+  }
+}
+
+section{
+  @include container-flex(0, column);
+  margin-bottom: 36px;
+
+  h1{
+    margin: 25px 0 25px 91px;
+    font-family: Racing Sans One;
+    font-size: 2.5rem;
+  }
+}
+
+.container{
+  @include container-flex(5px, row);
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  align-self: center;
+
+  color: var(--secundary-color);
+
+  .flex{
+    @include container-flex(25px, row);
+    height: 117px;
+    gap: 5px;
+
+    .ator{
+      @include container-flex(10px, row);
+      background-color: var(--quartenary-color);
+      align-items: center;
+      width: 247px;
+
+      img{
+        width: 83px;
+        height: 117px;
+        margin-left: -16px;
+      }
+
+      mat-card-content{
+        @include container-flex(0, column);
+        align-items: flex-start;
+        justify-content: start;
+        margin-left: 30px;
+
+        h1{
+          font-family: Rationale;
+          font-size: 1.2rem;
+          margin: 0;
+          color: var(--branco);
+        }
+
+        h2{
+          font-family: Rationale;
+          color: var(--branco);
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+}

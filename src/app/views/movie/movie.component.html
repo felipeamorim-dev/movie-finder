@@ -1,0 +1,63 @@
+<app-header></app-header>
+<main>
+  <nav class="nav">
+    <a routerLink=""> Home / {{ movieDetails.title }} </a>
+  </nav>
+
+  <section>
+    <div class="background" [ngStyle]="{
+      'background-image': urlImg,
+      'background-position': 'center',
+      'background-size': 'cover'
+    }">
+      <div class="effects">
+        <mat-card class="card">
+            <img [src]="img(movieDetails.poster_path)">
+            <mat-card-content>
+                <h1> {{ movieDetails.title }} </h1>
+                <h2>Enredo</h2>
+                <p class="scroller"> {{ movieDetails.overview }} </p>
+                <h2>Gênero</h2>
+                <div class="genre">
+                  <p *ngFor="let genre of movieDetails.genres"> {{ genre.name }} </p>
+                </div>
+                <h2>IMDB Rating</h2>
+                <p> {{ movieDetails.vote_average}} </p>
+            </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div class="divider">
+      <div class="time">
+        <mat-icon>restore</mat-icon>
+        <h2>Duração: {{ movieDetails.runtime }} min</h2>
+      </div>
+      <div class="release">
+        <mat-icon>today</mat-icon>
+        <h2>Data de Lançamento: {{ movieDetails.release_date | date: 'dd/MM/yyyy' }} </h2>
+      </div>
+      <div class="budget">
+        <mat-icon>monetization_on</mat-icon>
+        <h2>Orçamento: {{ movieDetails.budget | currency }}</h2>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h1>Atores</h1>
+    <div class="container">
+      <div class="flex" *ngFor="let cast of casts">
+        <div class="flex" *ngIf="cast.known_for_department == 'Acting' && cast.profile_path">
+          <mat-card class="ator">
+              <img [src]="img(cast.profile_path)">
+              <mat-card-content>
+                  <h1> {{ cast.name }} </h1>
+                  <h2> personagem: {{ cast.character }} </h2>
+              </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<app-footer></app-footer>
