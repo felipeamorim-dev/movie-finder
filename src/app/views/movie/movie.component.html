@@ -1,4 +1,4 @@
-<app-header></app-header>
+
 <main>
   <nav class="nav">
     <a routerLink=""> Home / {{ movieDetails.title }} </a>
@@ -44,7 +44,7 @@
   </section>
 
   <section>
-    <h1>Atores</h1>
+    <h1 class="atores">Atores</h1>
     <div class="container">
       <div class="flex" *ngFor="let cast of casts">
         <div class="flex" *ngIf="cast.known_for_department == 'Acting' && cast.profile_path">
@@ -60,4 +60,4 @@
     </div>
   </section>
 </main>
-<app-footer></app-footer>
+
